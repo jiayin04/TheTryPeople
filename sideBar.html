@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .navbar {
+          overflow: hidden;
+          background-color: #388e3c;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 5px;
+      }
+      .navbar a {
+          float: left;
+          font-size: 13px;
+          display: block;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+      }
+      .navbar a:hover, .dropdown:hover .dropbtn {
+          background-color: #4caf50;
+          /* color: black; */
+      }
+      .dropdown {
+          float: left;
+          /* overflow: hidden; */
+      }
+      .dropdown .dropbtn {
+          font-size: 13px;
+          border: none;
+          outline: none;
+          color: white;
+          padding: 14px 16px;
+          background-color: inherit;
+          font-family: inherit;
+          margin: 0;
+      }
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #4caf50;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+          /* border: solid 2px #388e3c; */
+          border-radius: 5px;
+      }
+      .dropdown-content.last{
+        right: 2.5%;
+      }
+      .dropdown-content a {
+          float: none;
+          color: #fff;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          text-align: center;
+      }
+      .dropdown-content a:hover {
+          background-color: #81c784;
+      }
+      .dropdown:hover .dropdown-content {
+          display: block;
+      }
+      .content {
+        padding: 15px;
+      }
+      button {
+        background-color: #388e3c;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #4caf50;
+      }
+      .header {
+        background: #388e3c;
+        color: white;
+        padding: 10px;
+        text-align: center;
+      }
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <!-- <a href="#home">Home</a> -->
+      <div class="dropdown">
+          <button class="dropbtn">Task Allocation 
+              <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+              <a href="#" onclick="google.script.run.openWebApp()">Open Web App</a>
+              <a href="#" onclick="google.script.run.initializeTaskManagement()"> Initialize Task Management</a>
+              <a href="#service1" onclick="google.script.run.generateProgressReport()"> Generate Progress Report</a>
+          </div>
+      </div>
+      <!-- <a href="#about">About</a> -->
+      <div class="dropdown">
+          <button class="dropbtn">Performance Reviews
+              <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+              <a href="#service2" onclick="google.script.run.createEmployeeFeedbackForm()">Create Employee Feedback Form</a>
+              <a href="#" onclick="google.script.run.generatePerformanceReport()"> Generate Performance Report</a>
+              <!-- <a href="#service3">Service 3</a> -->
+          </div>
+      </div> 
+      <div class="dropdown">
+          <button class="dropbtn">Resource Manager
+              <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content last">
+              <a href="#service2" onclick="google.script.run.generateResourceForm()"> Generate Resource Form</a>
+              <a href="#service3" onclick="google.script.run.processRequests()"style="display: none"> Process Requests</a>
+              <!-- <a href="#service1" onclick="">Progress Report</a> -->
+          </div>
+      </div> 
+      <!-- <a href="#contact">Contact</a> -->
+    </div>
+    <div class="content">
+      <h1>Welcome to the Trybar</h1>
+      <p>This is a custom sidebar in Google Sheets.</p>
+    </div>
+  </body>
+</html>
